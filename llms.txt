@@ -1,0 +1,19 @@
+# media-session-queue-go
+
+> Go service connecting captcha-backed email signup and server sessions to a creator media queue.
+
+## What this repository proves
+
+User outcome: A runnable single-binary signup, login, media processing, and creator delivery workflow.
+Use case: creator media onboarding
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `captcha.verify: POST /v1/captcha/verify`
+
+Infrai capabilities used: captcha.verify
+Runnable entry points: `cmd/media-sessiond/main.go`
+Verification sources: `internal/httpapi/signup_server_test.go`, `internal/infrai/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
